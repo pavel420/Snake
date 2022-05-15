@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/game_score"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/game_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.example.snake2.GameView
+        android:id="@+id/game_view"
+        android:layout_width="@dimen/game_size"
+        android:layout_height="@dimen/game_size"
+        android:layout_marginTop="72dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"></com.example.snake2.GameView>
+
+    <TextView
+        android:id="@+id/game_status"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:textColor="@color/red"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/bottomBar"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/game_score"
+        app:layout_constraintVertical_bias="0.133"></TextView>
+
+    <LinearLayout
+        android:id="@+id/bottomBar"
+        android:layout_width="405dp"
+        android:layout_height="173dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/black"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/topBtn"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:background="@color/purple_700"
+            android:src="@drawable/top_arrow" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/leftBtn"
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:background="@color/purple_700"
+                android:src="@drawable/left_arrow" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/rightBtn"
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="80dp"
+                android:background="@color/purple_700"
+                android:src="@drawable/right_arrow" />
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/bottomBtn"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:background="@color/purple_700"
+            android:src="@drawable/bottom_arrow" />
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/game_control_btn"
+        android:layout_width="125dp"
+        android:layout_height="57dp"
+        android:text="Pause"
+        app:layout_constraintBottom_toTopOf="@+id/bottomBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/game_view"
+        app:layout_constraintVertical_bias="1.0" />
+</androidx.constraintlayout.widget.ConstraintLayout>
